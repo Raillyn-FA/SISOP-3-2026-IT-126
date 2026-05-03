@@ -59,4 +59,14 @@ Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soa
 pthread_create(&tid, NULL, handle_client, pclient);
 ```
 Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
-4. 
+
+4. Validasi Username (Unique Identity)
+Server memastikan:
+* Tidak ada nama yang sama.
+```C
+if (username_exist(name))
+```
+Jika duplicate:
+```[System] The identity 'alice' is already synchronized.```
+
+6. 

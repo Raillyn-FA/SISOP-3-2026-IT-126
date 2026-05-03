@@ -142,7 +142,45 @@ gcc navi.c -o client -lpthread
 ```
 ### Contoh Output
 Client:
-
+```
+Enter your name: alice
+--- Welcome to The Wired, alice ---
+```
 Chat:
-
+```
+[alice]: hello lain
+[lain]: hello alice
+```
 Admin:
+```
+--- THE KNIGHTS CONSOLE ---
+1. Check Active Users
+2. Check Server Uptime
+3. Shutdown Server
+```
+
+## Soal 2 - The Battle of Eterion 
+Battle of Eterion merupakan sistem simulasi pertarungan berbasis IPC (Inter Process Communication) di mana terdapat dua komponen utama:
+* Orion (Server)
+* Eternal (Client)
+
+Komunikasi dilakukan menggunakan:
+* Message Queue → komunikasi request-response
+* Shared Memory → penyimpanan data global & realtime battle
+
+### Penjelasan Fitur
+1. Arena Initialization
+Arena dibuat dengan struktur:
+```C
+#define MSG_KEY 0x00001234
+#define SHM_KEY 0x00009012
+#define BATTLE_KEY 0x00005678
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/arena.h).
+Digunakan untuk:
+* Message Queue
+* Shared Memory global
+* Shared Memory battle
+
+
+3. 

@@ -263,3 +263,19 @@ Cooldown:
 |---------------|----------|------------|
 |    Menang     |    +50   |    +120    |
 |    Kalah      |    +15   |    +30     |
+
+```C
+data->users[i].xp += 50;
+```
+Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/eternal.c).
+
+9. Armory System
+Senjata meningkatkan damage:
+
+|    Senjata          |    Harga    |    Bonus   |
+|---------------------|-------------|------------|
+|    Wood Sword       |    100      |    +120    |
+|    Iron Sword       |    300      |    +30     |
+|    Steel Axe        |    600      |    +120    |
+|    Demon Blade      |    1500     |    +30     |
+|    KaGod Slayerlah  |    5000     |    +30     |

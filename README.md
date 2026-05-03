@@ -258,6 +258,7 @@ Cooldown:
 * Ultimate -> 5 detik
 
 8. Reward System
+
 |    Kondisi    |    XP    |    Gold    |
 |---------------|----------|------------|
 |    Menang     |    +50   |    +120    |

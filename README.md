@@ -158,7 +158,7 @@ Admin:
 2. Check Server Uptime
 3. Shutdown Server
 ```
-
+---
 ## Soal 2 - The Battle of Eterion 
 Battle of Eterion merupakan sistem simulasi pertarungan berbasis IPC (Inter Process Communication) di mana terdapat dua komponen utama:
 * Orion (Server)

@@ -279,3 +279,33 @@ Senjata meningkatkan damage:
 |    Steel Axe        |    600      |    +120    |
 |    Demon Blade      |    1500     |    +30     |
 |    KaGod Slayerlah  |    5000     |    +30     |
+
+```C
+data->users[idx].weapon_bonus = bonus;
+```
+Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/eternal.c).
+
+10. History System
+Setiap battle disimpan ke file:
+```C
+sprintf(filename, "%s_history.txt", current_user);
+```
+Format:
+```
+HH:MM | Enemy | WIN/LOSS | XP
+```
+Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/eternal.c).
+
+### Mekanisme Battle
+Damage:
+`
+Damage = 10 + weapon_bonus
+`
+Health:
+`
+HP = 100 + (XP / 10)
+`
+Ultimate:
+`
+Ultimate = Damage * 3
+`

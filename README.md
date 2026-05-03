@@ -121,3 +121,28 @@ Client keluar dengan:
 Server:
 * Menghapus client dari list
 * Menulis log
+
+### Cara Menjalankan
+1. Compile
+```Bash
+gcc wired.c -o server -lpthread
+gcc navi.c -o client -lpthread
+```
+2. Jalankan Server (Terminal 1)
+```Bash
+./server
+```
+3. Jalankan Client (Terminal 2)
+```Bash
+./client
+```
+4. Jalankan Client (Terminal 3)
+```Bash
+./client
+```
+### Contoh Output
+Client:
+
+Chat:
+
+Admin:

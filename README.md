@@ -58,7 +58,7 @@ Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soa
 ```C
 pthread_create(&tid, NULL, handle_client, pclient);
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+Sumber: [wired.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
 
 4. Validasi Username (Unique Identity)
 Server memastikan:
@@ -75,7 +75,7 @@ Setiap pesan dari client:
 ```C
 broadcast(msg, sock);
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+Sumber: [wired.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
 
 6. Admin System (The Knights)
 Admin login dengan:
@@ -89,7 +89,7 @@ Fitur Admin:
 ```C
 if (strcmp(name, ADMIN_NAME) == 0)
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/protocol.h).
+Sumber: [protocol.h](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/protocol.h).
 
 7. Logging System
 Semua aktivitas disimpan ke:
@@ -111,7 +111,7 @@ Menggunakan:
 time_t start_time;
 difftime(now, start_time);
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+Sumber: [wired.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
 
 9. Disconnect System
 Client keluar dengan:
@@ -176,11 +176,46 @@ Arena dibuat dengan struktur:
 #define SHM_KEY 0x00009012
 #define BATTLE_KEY 0x00005678
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/arena.h).
+Sumber: [arena.h](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/arena.h).
 Digunakan untuk:
 * Message Queue
 * Shared Memory global
 * Shared Memory battle
 
+2. Main Menu (Eternal)
+Client menampilkan menu awal:
+```C
+printf("1. Register\n");
+printf("2. Login\n");
+printf("3. Exit\n");
+```
+Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/eternal.c).
 
-3. 
+3. IPC Communication
+Komunikasi menggunakan:
+-> Message Queue:
+```C
+msgsnd(msgid, &msg, ...);
+msgrcv(msgid, &msg, ...);
+```
+Digunakan untuk:
+* Register
+* Login
+* Profile
+* Matchmaking
+
+-> Shared Memory
+```C
+shmget(SHM_KEY, sizeof(SharedData), ...);
+```
+Digunakan untuk:
+* Data user
+* Status battle
+
+Sumber: [arena.h](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/arena.h).
+
+4. Register & Login System
+Fitur:
+* Username unik
+* Password validasi
+* Tidak bisa login jika sudah online

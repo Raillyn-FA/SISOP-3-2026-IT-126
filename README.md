@@ -69,4 +69,55 @@ if (username_exist(name))
 Jika duplicate:
 ```[System] The identity 'alice' is already synchronized.```
 
-6. 
+5. Broadcast Message
+Setiap pesan dari client:
+* Dikirim ke semua client lain.
+```C
+broadcast(msg, sock);
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+
+6. Admin System (The Knights)
+Admin login dengan:
+* Username: `The Knights`
+* Password: `protocol7`
+
+Fitur Admin:
+* Cek jumlah user aktif
+* Cek uptime server
+* Shutdown server
+```C
+if (strcmp(name, ADMIN_NAME) == 0)
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/protocol.h).
+
+7. Logging System
+Semua aktivitas disimpan ke:
+```
+history.log
+```
+Format:
+`
+[YYYY-MM-DD HH:MM:SS] [Role] [Message]
+`
+Implementasi:
+```C
+fprintf(fp, "[%04d-%02d-%02d %02d:%02d:%02d] [%s] [%s]\n", ...)
+```
+
+8. Server Uptime:
+Menggunakan:
+```C
+time_t start_time;
+difftime(now, start_time);
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+
+9. Disconnect System
+Client keluar dengan:
+```
+/exit
+```
+Server:
+* Menghapus client dari list
+* Menulis log

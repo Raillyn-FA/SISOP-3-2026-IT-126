@@ -41,5 +41,6 @@ sock = socket(AF_INET, SOCK_STREAM, 0);
 connect(sock, (struct sockaddr*)&server_addr, sizeof(server_addr));
 send(sock, name, strlen(name), 0);
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/navi.c)
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/navi.c).\n
+
 2. 

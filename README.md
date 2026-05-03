@@ -41,6 +41,22 @@ sock = socket(AF_INET, SOCK_STREAM, 0);
 connect(sock, (struct sockaddr*)&server_addr, sizeof(server_addr));
 send(sock, name, strlen(name), 0);
 ```
-Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/navi.c).\n
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/navi.c).
 
-2. 
+2. Asynchronous Communication (Thread)
+Client menggunakan thread untuk:
+* Menerima pesan dari server.
+* Mengirim input user secara bersamaan.
+```C
+pthread_create(&tid, NULL, receive_msg, NULL);
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/navi.c).
+
+3. Multi Client Handling (Server)
+* `pthread` untuk setiap client.
+* Array `clients[]` untuk menyimpan user aktif.
+```C
+pthread_create(&tid, NULL, handle_client, pclient);
+```
+Sumber: [navi.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_1/wired.c).
+4. 

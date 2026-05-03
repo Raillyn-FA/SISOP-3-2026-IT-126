@@ -298,14 +298,181 @@ Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/
 
 ### Mekanisme Battle
 Damage:
-`
+```
 Damage = 10 + weapon_bonus
-`
+```
 Health:
-`
+```
 HP = 100 + (XP / 10)
-`
+```
 Ultimate:
-`
+```
 Ultimate = Damage * 3
-`
+```
+### Persistence System
+Data disimpan ke file:
+```C
+users.dat
+```
+Load saat server start:
+```C
+load_users(data);
+```
+
+### Cara Menjalankan
+1. Compile
+```Bash
+gcc orion.c -o orion
+gcc eternal.c -o eternal
+```
+2. Jalankan Server
+```Bash
+./orion
+```
+3. Jalankan Client
+```Bash
+./eternal
+```
+
+### Output
+1. Menjalankan Server:
+```Bash
+./orion
+Orion is ready (PID: 7766)
+```
+
+2. Tampilan Awal Client
+```Bash
+./eternal
+=================================
+      BATTLE OF ETERION
+=================================
+1. Register
+2. Login
+3. Exit
+Choice:
+```
+
+3. Register User
+```Bash
+Choice: 1
+Username: memet
+Password: 234
+Register success.
+```
+
+4. Login User
+```Bash
+Choice: 2
+Username: memet
+Password: 234
+Login success.
+```
+
+5. Profile Menu
+```Bash
+=============================
+     BATTLE OF ETERION
+=============================
+Name : memet
+Lvl  : 1
+Gold : 150
+XP   : 0
+
+1. Battle
+2. Armory
+3. History
+4. Logout
+Choice:
+```
+
+6. Matchmaking
+```Bash
+Choice: 1
+
+Searching opponent...
+Searching... [35]
+Searching... [34]
+Searching... [33]
+...
+Searching... [1]
+
+No opponent found.
+Entering BOT battle...
+```
+
+7. Battle vs Bot
+```Bash
+=========== ARENA ===========
+memet VS Wild Beast
+
+Enemy HP : 100
+Your HP  : 100
+
+Press a = Attack
+Press u = Ultimate
+> a
+
+You hit for 10 damage!
+Wild Beast attacks you!
+
+Enemy HP : 90
+Your HP  : 92
+```
+Saat Menang:
+```Bash
+=========== ARENA ===========
+Enemy HP : 0
+Your HP  : 20
+
+=== VICTORY ===
+Press ENTER...
+```
+Saat Kalah:
+```Bash
+=========== ARENA ===========
+Enemy HP : 10
+Your HP  : 0
+
+=== DEFEAT ===
+Press ENTER...
+```
+
+8. Setelah Battle (Kembali ke Profile)
+```Bash
+=============================
+     BATTLE OF ETERION
+=============================
+Name : memet
+Lvl  : 1
+Gold : 270
+XP   : 50
+```
+
+9. Armory Menu
+```Bash
+Choice: 2
+
+====== ARMORY ======
+Gold: 270
+Current Bonus Damage: +0
+
+1. Wood Sword   (100 G)  +5
+2. Iron Sword   (300 G)  +15
+3. Steel Axe    (600 G)  +30
+4. Demon Blade  (1500 G) +60
+5. God Slayer   (5000 G) +150
+0. Back
+Choice:
+```
+
+10. History Menu
+```Bash
+Choice: 3
+
+====== MATCH HISTORY ======
+17:30 | Wild Beast  | WIN  | +50 XP
+17:32 | Wild Beast  | LOSS | +15 XP
+
+Press ENTER...
+```

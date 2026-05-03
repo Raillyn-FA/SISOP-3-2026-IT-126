@@ -219,3 +219,46 @@ Fitur:
 * Username unik
 * Password validasi
 * Tidak bisa login jika sudah online
+```C
+if (find_user(data, msg.username) != -1)
+```
+Sumber: [orion.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/orion.c).
+
+5. Default User Data
+Saat register:
+```C
+u.gold = 150;
+u.xp = 0;
+u.level = 1;
+```
+Sumber: [orion.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/orion.c).
+
+6. Matchmaking System
+* Durasi: 35 detik
+* Jika tidak dapat lawan -> bot
+```C
+for (int t = 35; t >= 1; t--)
+```
+Sumber: [eternal.c](https://github.com/Raillyn-FA/SISOP-3-2026-IT-126/blob/main/soal_2/eternal.c).
+
+7. Realtime Battle System
+Battle menggunakan:
+* Shared Memory (BattleRoom)
+```C
+room->hp1 -= mydmg;
+room->hp2 -= mydmg;
+```
+Fitur:
+* Attack (`a`)
+* Ultimate (`u`)
+* Refresh (`r`)
+
+Cooldown:
+* Attack -> 1 detik
+* Ultimate -> 5 detik
+
+8. Reward System
+|    Kondisi    |    XP    |    Gold    |
+-----------------------------------------
+|    Menang     |    +50   |    +120    |
+|    Kalah      |    +15   |    +30     |
